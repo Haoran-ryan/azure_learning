@@ -1,0 +1,54 @@
+## 5.1 Describe Azure identity services
+
+- cloud: Microsoft Entra ID
+- on-premises: Active Directory on windows servers
+
+### Microsoft Entra Connect
+
+- connect on-premises AD to Azure AD
+
+### Entra domain service
+
+- managed domain services
+- for lift-and-shift:
+  - run legacy apps in Azure
+
+#### How does it work?
+
+- create namespace (namespace = domain name)
+- replica set: 2 Windows Server domain controllers deployed in selected AZ region
+- one-way sync from on-premises AD to Azure AD
+  ![entra domain service](https://learn.microsoft.com/en-us/training/wwl-azure/describe-azure-identity-access-security/media/azure-active-directory-sync-topology-7359f2b8.png)
+
+## 5.2 Describe Azure autehntication methods
+
+multiple options
+
+- standard username/password
+- MFA
+- SSO
+- passwordless
+- Windows Hello for Business
+  - bio-metric
+- \*FDIO2 security key 类似国内的 U 盾
+
+## 5.3 Describe Azure external identities
+
+- use case: share resources & define how internal users interact with external users
+- managed in Microsoft Entra ID
+- external users 'bring their own identity' like Google, Facebook, etc.
+  ![external identities](https://learn.microsoft.com/en-us/training/wwl-azure/describe-azure-identity-access-security/media/azure-active-directory-external-identities-5a892021.png)
+
+## 5.4 Describe Azure conditional access
+
+- granular MFA policies
+- based on user, location, device, etc. (a second MFA may / may not be required)
+- use case:
+  - role-based: MFA for admins but not for users
+  - application-based
+  - device-based
+  - block untrusted access (locatio, device, etc.)
+
+## 5.5 Describe Azure role-based access control
+
+- least privilage principle: only give access to complete a task
